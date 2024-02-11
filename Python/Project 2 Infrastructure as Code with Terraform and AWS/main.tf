@@ -47,6 +47,7 @@
     identifier_prefix    = "example-rds"
     username             = "admin"
     password             = "Password123"  # Change to your desired password
+    skip_final_snapshot = true
     }
 
 
