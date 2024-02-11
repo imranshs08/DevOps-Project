@@ -10,3 +10,7 @@ variable "bucket_name_prefix" {
   default = "example"
 }
 
+variable "key_name" {
+  description = "key-name for the resource ec2"
+  default = "imran-2024.ppk"
+}

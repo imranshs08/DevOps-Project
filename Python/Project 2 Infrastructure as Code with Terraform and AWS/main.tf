@@ -1,4 +1,4 @@
-    resource "random_id" "random-Value" {
+    resource "random_id" "random-value" {
     byte_length = 10
     }
 
@@ -15,14 +15,13 @@
         name   = "virtualization-type"
         values = ["hvm"]
     }
-
     owners = ["099720109477"] # Canonical
     }
 
     resource "aws_instance" "web" {
     ami           = data.aws_ami.ubuntu.id
     instance_type = var.instance_type
-    key_name = "imran-2024.ppk"
+    key_name = var.key_name
 
     tags = {
         Name = "Server-Web"
@@ -31,7 +30,7 @@
 
     # Create S3 bucket
     resource "aws_s3_bucket" "example" {
-    bucket  = "imran-${random_id.random-Value.hex}"
+    bucket  = "imran-${random_id.random-value.hex}"
 
     tags = {
         Name        = "My bucket"

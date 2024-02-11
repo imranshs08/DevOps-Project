@@ -1,3 +1,3 @@
 instance_type = "t2.micro"
-
-bucket = "s3-random-imran-2024-01"
+bucket_name_prefix = "imran"
+key_name = "imran-2024.ppk"
