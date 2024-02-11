@@ -4,7 +4,7 @@ requirements.txt
 *.tfstate
 *.tfstate.backup
 .terraform/
-*.tfvars
+# *.tfvars
 # .gitattributes
 .terraform.lock.hcl -text
 *.exe
