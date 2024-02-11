@@ -1,5 +1,5 @@
 import subprocess
-import time
+#import time
 
 def terraform_init():
     subprocess.run(["terraform", "init"])
