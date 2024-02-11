@@ -1,12 +1,24 @@
+from flask import Flask
+
+app = Flask(__name__)
+
 class Tools:
     name_car = []
     tyres = 4
-    brand="toyota"
+    brand = "Toyota"
+
     def carTyres(self):
         if self.tyres == 4:
             self.name_car.append(self.brand)
-            print(self.name_car)
+            return self.name_car[0]
         else:
-            print("No 4 wheelers car in the list")
-Toyota = Tools()
-Toyota.carTyres()
+            return "No 4 wheelers car in the list"
+
+@app.route('/')
+def get_car_brand():
+    toyota_instance = Tools()
+    toyota_car = toyota_instance.carTyres()
+    return f'Toyota car brand: {toyota_car}'
+
+if __name__ == '__main__':
+    app.run()
