@@ -1,0 +1,10 @@
+.dockerignore
+requirements.txt
+# Ignore Terraform files
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.tfvars
+# .gitattributes
+.terraform.lock.hcl -text
+*.exe
