@@ -8,3 +8,4 @@ requirements.txt
 # .gitattributes
 .terraform.lock.hcl -text
 *.exe
+.terraform.lock.hcl
