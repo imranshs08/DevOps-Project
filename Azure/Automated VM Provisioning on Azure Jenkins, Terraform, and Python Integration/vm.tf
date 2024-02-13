@@ -35,16 +35,15 @@ resource "azurerm_linux_virtual_machine" "tf-vm" {
   location            = azurerm_resource_group.rg-tf.location
   size                = "Standard_F2"
   admin_username      = "imran"
-  admin_password = "Icl@29372937"
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.example.id,
   ]
 
-#   admin_ssh_key {
-#     username   = "imran"
-#     public_key = file("C:\\Users\\imran\\OneDrive - Jamia Millia Islamia (A Central University)\\Desktop\\2024\\Terraform\\azure vm\\ssh-keys\terraform-azure.pub")
-#   }
+  admin_ssh_key {
+    username   = "imran"
+    public_key = file("C:\\Users\\imran\\OneDrive - Jamia Millia Islamia (A Central University)\\Desktop\\2024\\Terraform\\azure vm\\ssh-keys\terraform-azure.pub")
+  }
 
   os_disk {
     caching              = "ReadWrite"
