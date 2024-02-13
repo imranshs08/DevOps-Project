@@ -6,9 +6,8 @@ The project aims to automate the creation of virtual machines (VMs) on Azure usi
 
 https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 
-Java Installation :
 
-# For Ubuntu Systems
+# Java Installation
 ```
 sudo apt update
 sudo apt install fontconfig openjdk-17-jre -y
