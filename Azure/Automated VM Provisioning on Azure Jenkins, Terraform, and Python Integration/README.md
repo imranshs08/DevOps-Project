@@ -9,11 +9,11 @@ https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 Java Installation :
 
 # For Ubuntu Systems
-
+```
 sudo apt update
 sudo apt install fontconfig openjdk-17-jre -y
 java -version
-
+```
 #Jenkins Installation 
 
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
