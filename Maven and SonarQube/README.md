@@ -42,7 +42,6 @@ export PATH=$M2_HOME/bin:$PATH
 source ~/.bashrc  # Or source ~/.zshrc
 
 ```
-```
 mvn -version
 Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
 Maven home: /opt/maven
