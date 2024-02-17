@@ -8,7 +8,7 @@ sudo apt update
 sudo apt install fontconfig openjdk-17-jre -y
 java -version
 ```
-# Jenkins Installation 2
+# Jenkins Installation 
 
 ```
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
