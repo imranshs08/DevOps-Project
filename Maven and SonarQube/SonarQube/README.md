@@ -21,3 +21,13 @@ Its acts as "Quality Management Tool".
 - Test Reports
 - Code Coverage
 ```
+# Components of SonarQube
+```
+SonarQube Server
+- Rules
+- Database
+- Web Interface
+
+SonarScanner
+- SourceCode
+```
