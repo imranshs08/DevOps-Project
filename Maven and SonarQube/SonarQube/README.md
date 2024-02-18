@@ -14,7 +14,7 @@
 - VERACODE
 - CodeScene
 
-# Why SonaQube
+# Why SonarQube
 ```
 Its acts as "Quality Management Tool".
 - Code Analysis
