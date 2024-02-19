@@ -1,5 +1,3 @@
-# Secure Infrastructure Provisioning and CI/CD Automation with Terraform, Azure Vault, and Jenkins
-
 # Project Overview:
 ```
 Provision Azure infrastructure using Terraform.
@@ -36,24 +34,30 @@ Store sensitive information such as database credentials, API keys, etc., secure
 Prepare a sample application (could be a web app, API, or any other service) along with necessary configurations.
 Store application configuration settings in Azure Vault.
 ```
-Configure Jenkins:
-
+# Configure Jenkins:
+```
 Install necessary plugins in Jenkins for Azure integration and Terraform.
 Configure Jenkins credentials to access Azure and Azure Vault securely.
 Create a Jenkins pipeline to orchestrate the CI/CD process.
-CI/CD Pipeline:
-
+```
+# CI/CD Pipeline:
+```
 Define stages in Jenkins pipeline for building, testing, and deploying the application.
 Utilize Terraform commands within the pipeline to apply infrastructure changes.
 Inject Azure Vault secrets securely into the application deployment process.
-Testing and Deployment:
-
+```
+# Testing and Deployment:
+```
 Implement automated tests as part of the Jenkins pipeline to ensure the application's integrity.
 Automate the deployment process using Terraform for infrastructure and Jenkins for application deployment.
 Monitor deployment logs and alerts for any issues.
-Continuous Monitoring and Improvement:
-
+```
+# Continuous Monitoring and Improvement:
+```
 Implement monitoring solutions (e.g., Azure Monitor) to track infrastructure and application performance.
 Analyze logs and metrics for continuous improvement.
 Iterate on the CI/CD pipeline for enhancements and optimizations.
-Note: This is a high-level overview. Each step requires detailed implementation and configuration. Additionally, ensure best practices for security, scalability, and reliability are followed throughout the project
+```
+
+``` Note: This is a high-level overview. Each step requires detailed implementation and configuration. Additionally, ensure best practices for security, scalability, and reliability are followed throughout the project
+```
