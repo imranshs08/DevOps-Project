@@ -1,4 +1,4 @@
-#Secure Infrastructure Provisioning and CI/CD Automation with Terraform, Azure Vault, and Jenkins
+# Secure Infrastructure Provisioning and CI/CD Automation with Terraform, Azure Vault, and Jenkins
 
 # Project Overview:
 ```
