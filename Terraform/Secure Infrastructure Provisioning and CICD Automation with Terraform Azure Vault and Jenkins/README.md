@@ -19,20 +19,23 @@ Set up CI/CD pipelines using Jenkins for a sample application deployment.
     *  Install Terraform.
     *  Initialize a new Terraform project.
 
-Define Azure Infrastructure:
-
+# Define Azure Infrastructure:
+```
 Create a Terraform configuration file (main.tf) to define Azure resources like Virtual Networks, Subnets, VMs, etc.
 Utilize Azure provider in Terraform to interact with Azure services.
 Use Terraform modules to organize and reuse infrastructure components efficiently.
-Integrate Azure Vault:
-
+```
+# Integrate Azure Vault:
+```
 Install Azure Vault agent on VMs provisioned through Terraform.
 Authenticate Azure VMs with Azure Vault.
 Store sensitive information such as database credentials, API keys, etc., securely in Azure Vault.
-Sample Application Setup:
-
+```
+# Sample Application Setup:
+```
 Prepare a sample application (could be a web app, API, or any other service) along with necessary configurations.
 Store application configuration settings in Azure Vault.
+```
 Configure Jenkins:
 
 Install necessary plugins in Jenkins for Azure integration and Terraform.
