@@ -60,5 +60,6 @@ Iterate on the CI/CD pipeline for enhancements and optimizations.
 ```
 
 ``` 
-Note: This is a high-level overview. Each step requires detailed implementation and configuration. Additionally, ensure best practices for security, scalability, and reliability are followed throughout the project
+Note: This is a high-level overview. Each step requires detailed implementation and configuration. 
+Additionally, ensure best practices for security, scalability, and reliability are followed throughout the project
 ```
