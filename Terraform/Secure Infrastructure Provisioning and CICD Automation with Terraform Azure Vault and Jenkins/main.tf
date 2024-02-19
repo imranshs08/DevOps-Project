@@ -2,6 +2,13 @@ provider "azurerm" {
   features {}
 }
 
+resource "azurerm_public_ip" "vm" {
+  name                = "example-public-ip"
+  location            = var.location
+  resource_group_name = var.resource_group
+  allocation_method   = "Dynamic"
+}
+
 variable "location" {}
 variable "resource_group" {}
 variable "virtual_network" {}

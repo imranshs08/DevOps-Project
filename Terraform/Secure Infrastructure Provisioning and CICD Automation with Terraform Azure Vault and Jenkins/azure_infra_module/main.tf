@@ -3,6 +3,13 @@ resource "azurerm_resource_group" "rg" {
   location = var.location
 }
 
+resource "azurerm_public_ip" "vm" {
+  name                = "example-public-ip"
+  location            = var.location
+  resource_group_name = var.resource_group
+  allocation_method   = "Dynamic"
+}
+
 resource "azurerm_virtual_network" "vnet" {
   name                = var.virtual_network
   address_space       = ["10.0.0.0/16"]
