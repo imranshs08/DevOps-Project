@@ -16,8 +16,8 @@ Set up CI/CD pipelines using Jenkins for a sample application deployment.
 # Project Steps:
 
 - Setup Terraform Environment:
-*  Install Terraform.
-*  Initialize a new Terraform project.
+    *  Install Terraform.
+    *  Initialize a new Terraform project.
 
 Define Azure Infrastructure:
 
