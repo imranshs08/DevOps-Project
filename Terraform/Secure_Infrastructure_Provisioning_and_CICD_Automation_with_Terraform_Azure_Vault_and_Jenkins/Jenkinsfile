@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Initialize Terraform') {
       steps {
-        sh 'terraform init' 
+        sh 'cd Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins && terraform init' 
       }
     }
 
@@ -23,11 +23,7 @@ pipeline {
     stage('Plan Terraform') {
       steps {
         sh 'terraform plan' 
-      }
-    
-
-
-      
+      } 
     }
   }
 }
