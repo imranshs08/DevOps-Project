@@ -1,0 +1,40 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Initialize Terraform') {
+      steps {
+        sh 'terraform init' 
+      }
+    }
+
+    stage('Validate Terraform') {
+      steps {
+        sh 'terraform validate'
+      }
+    }
+
+    stage('Plan Terraform') {
+      steps {
+        sh 'terraform plan' 
+      }
+    }
+
+    stage('Apply Terraform') {
+      steps {
+        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY', region: 'your-region')]) {
+          sh 'terraform apply -auto-approve'
+        }
+      }
+    }
+
+    stage('Deploy Application') {
+      steps {
+        echo "Print Succesful"
+        // // Example: Assuming artifact is already built, and you have the bucket name
+        // sh "aws s3 cp myapp.zip s3://${module.app_deployment.artifact_bucket_name}/myapp.zip"
+        // // Additional deployment steps to your instance(s)
+      }
+    }
+  }
+}
