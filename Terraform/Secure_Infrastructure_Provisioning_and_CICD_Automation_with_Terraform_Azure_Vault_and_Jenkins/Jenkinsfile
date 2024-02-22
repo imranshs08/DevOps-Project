@@ -12,6 +12,7 @@ pipeline {
       steps {
         sh 'terraform fmt'
       }
+    }
 
     stage('Validate Terraform') {
       steps {
