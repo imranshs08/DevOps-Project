@@ -1,29 +1,12 @@
-provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_public_ip" "vm" {
-  name                = "example-public-ip"
-  location            = var.location
-  resource_group_name = var.resource_group
-  allocation_method   = "Dynamic"
-}
-
-variable "location" {}
-variable "resource_group" {}
-variable "virtual_network" {}
-variable "subnet" {}
-
-output "vm_public_ip" {
-  value = azurerm_public_ip.vm.ip_address
-}
 
 module "azure_infra" {
   source = "./azure_infra_module"
-  
+
   // Pass input variables to the module
-  location          = var.location
-  resource_group    = var.resource_group
-  virtual_network   = var.virtual_network
-  subnet            = var.subnet
+  location        = var.location-add
+  resource_group  = var.resource_group-name
+  virtual_network = var.virtual_network-name
+  subnet          = var.subnet-name
+  
 }
+

@@ -1,4 +1,4 @@
-resource_group = "rg-1"
-location = "East US"
-virtual_network = "vnet-imran"
-subnet = "sub-imran"
+resource_group-name  = "rg-12"
+location-add        = "East US"
+virtual_network-name = "vnet-imran-ahmad"
+subnet-name          = "sub-imran-ahmad"

@@ -1,3 +1,5 @@
-output "vm_public_ip" {
-  value = azurerm_public_ip.vm.ip_address
+#output : output.tf
+
+output "vm-public-ip" {
+  value = try(azurerm_linux_virtual_machine.vm-server.public_ip_address)
 }
