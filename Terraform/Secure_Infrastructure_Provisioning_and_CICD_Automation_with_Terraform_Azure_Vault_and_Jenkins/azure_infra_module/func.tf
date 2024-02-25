@@ -62,10 +62,10 @@ resource "azurerm_network_security_rule" "allowed-ports" {
   network_security_group_name = azurerm_network_security_group.example.name
 }
 
-resource "azurerm_network_interface_security_group_association" "example" {
-  network_interface_id      = azurerm_network_interface.nic-vb.id
-  network_security_group_id = azurerm_network_security_group.example.id
-}
+# resource "azurerm_network_interface_security_group_association" "example" {
+#   network_interface_id      = azurerm_network_interface.nic-vb.id
+#   network_security_group_id = azurerm_network_security_group.example.id
+# }
 
 resource "azurerm_linux_virtual_machine" "vm-server" {
   name                = "vm-server"
