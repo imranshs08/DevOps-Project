@@ -9,14 +9,7 @@ pipeline {
         stage('Initialize Terraform') {
             steps {
                 dir(env.TF_DIR) {
-                    // withCredentials([azureServicePrincipal(credentialsId: 'AZ_Subscription',
-                                                       //   tenantIdVariable: 'AZURE_TENANT_ID',
-                                                        //   clientIdVariable: 'AZURE_CLIENT_ID',
-                                                        //   clientSecretVariable: 'AZURE_CLIENT_SECRET',
-                                                        //   subscriptionIdVariable: 'AZURE_SUBSCRIPTION_ID')]) 
-                                                        {
-                        sh 'terraform init'
-                    }
+                    sh 'terraform init'
                 }
             }
         }
