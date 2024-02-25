@@ -1,28 +1,32 @@
 pipeline {
     agent any
 
+    environment {
+        TF_DIR = 'Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
+    }
+
     stages {
         stage('Initialize Terraform') {
             steps {
-                     sh 'cd ~/workspace/Azure_Nginx/Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
+                dir(env.TF_DIR) {
                     sh 'terraform init'
-                    sh 'pwd'
-                    sh 'ls -ltra'
                 }
             }
+        }
 
         stage('Refresh Terraform State') {
             steps {
-                    sh 'cd ~/workspace/Azure_Nginx/Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
+                   dir(env.TF_DIR) {
                     sh 'terraform refresh'
                 }
             }
-
+}
         stage('Destroy Terraform') {
             steps {
-
+                    dir(env.TF_DIR) {
                     sh 'terraform destroy -auto-approve'
                 }
             }
         }
     }
+}
