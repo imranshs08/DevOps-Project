@@ -3,56 +3,43 @@ pipeline {
 
     environment {
         TF_DIR = 'Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
-        AZURE_CREDENTIAL_ID = 'AZ_Subscription' // ID of Azure Service Principal credentials configured in Jenkins
     }
 
     stages {
         stage('Initialize Terraform') {
             steps {
-                script {
-                    withCredentials([azureServicePrincipal(credentialsId: env.AZURE_CREDENTIAL_ID, variable: 'AZURE_CREDENTIALS')]) {
-                        dir(env.TF_DIR) {
-                            sh 'terraform init'
-                        }
+                dir(env.TF_DIR) {
+                    withCredentials([azureServicePrincipal(credentialsId: 'AZ_Subscription',
+                                                          tenantIdVariable: 'AZURE_TENANT_ID',
+                                                          clientIdVariable: 'AZURE_CLIENT_ID',
+                                                          clientSecretVariable: 'AZURE_CLIENT_SECRET',
+                                                          subscriptionIdVariable: 'AZURE_SUBSCRIPTION_ID')]) {
+                        sh 'terraform init'
                     }
                 }
             }
         }
 
-        stage('Validate Terraform Configuration') {
+        stage('Validate Format') {
             steps {
-                script {
-                    withCredentials([azureServicePrincipal(credentialsId: env.AZURE_CREDENTIAL_ID, variable: 'AZURE_CREDENTIALS')]) {
-                        dir(env.TF_DIR) {
-                            sh 'terraform validate'
-                        }
-                    }
+                dir(env.TF_DIR) {
+                    sh 'terraform fmt'
+                }
+            }
+        }
+
+        stage('Validate Terraform') {
+            steps {
+                dir(env.TF_DIR) {
+                    sh 'terraform validate'
                 }
             }
         }
 
         stage('Plan Terraform') {
             steps {
-                script {
-                    withCredentials([azureServicePrincipal(credentialsId: env.AZURE_CREDENTIAL_ID, variable: 'AZURE_CREDENTIALS')]) {
-                        dir(env.TF_DIR) {
-                            sh 'terraform plan'
-                        }
-                    }
-                }
-            }
-        }
-
-        // Add more stages as needed
-
-        stage('Apply Terraform') {
-            steps {
-                script {
-                    withCredentials([azureServicePrincipal(credentialsId: env.AZURE_CREDENTIAL_ID, variable: 'AZURE_CREDENTIALS')]) {
-                        dir(env.TF_DIR) {
-                            sh 'terraform apply --auto-approve'
-                        }
-                    }
+                dir(env.TF_DIR) {
+                    sh 'terraform plan'
                 }
             }
         }
