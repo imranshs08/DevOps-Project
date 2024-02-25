@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        TF_DIR = 'Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
+        TF_DIR = '~/workspace/Azure_Nginx/Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
     }
 
     stages {
