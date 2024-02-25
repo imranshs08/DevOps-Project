@@ -9,6 +9,8 @@ pipeline {
         stage('Initialize Terraform') {
             steps {
                 dir(env.TF_DIR) {
+                    sh 'pwd'
+                     sh 'ls -ltra'
                     sh 'terraform init'
                 }
             }
