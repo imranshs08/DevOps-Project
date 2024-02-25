@@ -11,6 +11,7 @@ pipeline {
                 dir(env.TF_DIR) {
                     sh 'pwd'
                      sh 'ls -ltra'
+                     sh 'cd ~/workspace/Azure_Nginx/Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
                     sh 'terraform init'
                 }
             }
@@ -19,6 +20,7 @@ pipeline {
         stage('Refresh Terraform State') {
             steps {
                 dir(env.TF_DIR) {
+                    sh 'cd ~/workspace/Azure_Nginx/Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
                     sh 'terraform refresh'
                 }
             }
