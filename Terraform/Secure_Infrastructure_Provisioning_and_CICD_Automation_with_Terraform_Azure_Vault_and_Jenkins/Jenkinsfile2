@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    environment {
+        TF_DIR = 'Terraform/Secure_Infrastructure_Provisioning_and_CICD_Automation_with_Terraform_Azure_Vault_and_Jenkins'
+    }
+
+    stages {
+        stage('Initialize Terraform') {
+            steps {
+                dir(env.TF_DIR) {
+                    sh 'terraform init'
+                }
+            }
+        }
+
+        stage('Refresh Terraform State') {
+            steps {
+                dir(env.TF_DIR) {
+                    sh 'terraform refresh'
+                }
+            }
+        }
+
+        stage('Destroy Terraform') {
+            steps {
+                dir(env.TF_DIR) {
+                    sh 'terraform destroy -auto-approve'
+                }
+            }
+        }
+    }
+}
